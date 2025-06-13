@@ -1,0 +1,16 @@
+In deze opgave gaan we merge sort paralleliseren.
+
+De leeruitkomsten die bij deze opdracht horen zijn:
+
+- een complexiteitsanalyse kan uitvoeren op een bestaande implementatie en/of algoritme;
+- code kan optimaliseren m.b.t. de gebruikte algoritmiek;
+- kan onderbouwen welke invloed gemaakte keuzes hebben op de optimalisatie van een implementatie en/of algoritme;
+
+Dit doen we in drie stappen:
+
+1. Ontwerp op papier (a.h.v. een voorbeeld van een array van, zeg, 8 getallen) hoe je door middel van 1, 2, 4, 8 cores/processen/threads/... via het merge sort algoritme een lijst kan sorteren (dus laat voor alle aantallen een ontwerp zien). Denk hierbij goed na over hoe je de data distribueert over de verschillende processen, en hoe je de resultaten ook weer efficient samen brengt. Voor de basis mergesort mag je een implementatie van het internet pakken (uiteraard met bronverwijzing)
+2. Analyseer je ontwerp, en bepaal wat de complexiteit van deze implementatie van merge sort is. Is deze vergelijkbaar met de complexiteit van van de sequentiële merge sort? Zo nee, waar ligt dat aan? Bepaal voor beide varianten de tijd- en ruimtecomplexiteit en druk deze uit in Big-O notatie. Kijk hierbij hoeveel sneller/trager je algoritme wordt door te multithreaden.
+3. Bepaal de communicatie overhead van je ontwerp: als je aanneemt dat elke opsplitsing van de lijst, elke verplaatsing van data naar een ander process en elke samenvoeging van lijsten even lang duren (allemaal een bepaalde tijd eenheid), hoe verhoudt de hoeveelheid communicatie zich dan tot het aantal ingezette processoren en tot de grootte van de lijst?
+4. Maak een PoC implementatie in C++ door middel van threading. Bepaal testmatig wat de run-time complexiteit van je implementatie is bij gebruik van 1, 2, 4, ... threads. Plot deze in een grafiek.
+5. Extra: Maak een ontwerp op papier voor een implementatie die gebruik maakt van een thread pool met worker threads (waarbij nieuwe threads worden aangeroepen vanuit binnen het algoritme)
+6. Extra: Maak een alternatieve implementatie die gebruik maakt van worker threads door in de recursieve aanroep nieuwe threads aan te maken. Geef een korte, intuitieve analyse, over hoe deze verschilt van de threadpool-implementatie. Heb je meer of minder overhead? Hoeveel threads maak je aan? etc. Let op, deze opdracht is zeer lastig. Doe dit alleen als je tijd over hebt.
